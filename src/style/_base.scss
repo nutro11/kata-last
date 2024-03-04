@@ -1,0 +1,114 @@
+html {
+  font-family: "TT Lakes", sans-serif;
+  background: $bgGrey;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.container {
+  position: relative;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 700;
+  color: $black;
+  line-height: 32px;
+}
+
+input {
+  border: 1px solid #eaeaea;
+  color: #b5b6bc;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+textarea {
+  border: 1px solid #eaeaea;
+  color: #b5b6bc;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.btn-rounded {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+}
+
+.btn-stadium {
+  display: flex;
+  padding: 4px 4px 4px 17px;
+  justify-content: space-between;
+  align-items: center;
+  width: 119px;
+  height: 32px;
+  background-color: $pink;
+  border-radius: 16px;
+  border: 1px solid $pink;
+  font-size: 12px;
+  line-height: 24px;
+  transition: $trans;
+  font-weight: 700;
+  letter-spacing: -0.15px;
+  text-transform: uppercase;
+  color: $white;
+
+  &::after {
+    content: "";
+    display: block;
+    background: url("data:image/svg+xml,%3Csvg width='6.059082' height='9.232666' viewBox='0 0 6.05908 9.23267' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs/%3E%3Cpath id='dropdown' d='M3.33105 4.6333L0.32251 1.8623C-0.10498 1.46851 -0.10791 0.794678 0.316162 0.397217L0.451416 0.270508C0.834229 -0.088623 1.42944 -0.090332 1.8147 0.266357L5.73853 3.89941C6.16602 4.29517 6.16602 4.97119 5.73853 5.36694L1.87769 8.94189C1.45703 9.3313 0.806885 9.32935 0.388672 8.93726C-0.0744629 8.50293 -0.0712891 7.76685 0.395508 7.33691L3.33105 4.6333Z' fill='%23FFFFFF' fill-opacity='1.000000' fill-rule='evenodd'/%3E%3C/svg%3E%0A")
+      no-repeat;
+    background-position: center center;
+    width: 24px;
+    height: 24px;
+    transition: $trans;
+  }
+
+  &:hover {
+    background-color: $white;
+    color: $pink;
+  }
+
+  &:hover::after {
+    background: url("data:image/svg+xml,%3Csvg width='6.059082' height='9.232666' viewBox='0 0 6.05908 9.23267' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cdefs/%3E%3Cpath id='dropdown' d='M3.33105 4.6333L0.32251 1.8623C-0.10498 1.46851 -0.10791 0.794678 0.316162 0.397217L0.451416 0.270508C0.834229 -0.088623 1.42944 -0.090332 1.8147 0.266357L5.73853 3.89941C6.16602 4.29517 6.16602 4.97119 5.73853 5.36694L1.87769 8.94189C1.45703 9.3313 0.806885 9.32935 0.388672 8.93726C-0.0744629 8.50293 -0.0712891 7.76685 0.395508 7.33691L3.33105 4.6333Z' fill='%23ff3e79' fill-opacity='1.000000' fill-rule='evenodd'/%3E%3C/svg%3E%0A")
+      no-repeat;
+    background-position: center center;
+  }
+}
+
+.main-content {
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.bg {
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  opacity: 0;
+  z-index: 5;
+  transition: $trans;
+
+  &--active {
+    visibility: visible;
+    opacity: 0.97;
+  }
+}
+
+.main-content {
+  min-width: 0;
+
+  &__right {
+    min-width: 0;
+  }
+}
+
+.btn-hide::before {
+  transform: rotate(180deg);
+}

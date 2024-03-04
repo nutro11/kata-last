@@ -1,0 +1,116 @@
+.modal {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  height: 100vh;
+  background-color: $white;
+  border-left: 1px solid #d9fff5;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+    -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  z-index: 15;
+
+  @media (min-width: 768px) {
+    width: 440px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 24px;
+
+    @media (min-width: 768px) {
+      padding: 40px 32px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 3px;
+      height: 32px;
+      left: -19px;
+      top: 0px;
+      background-color: #41f6d7;
+      border-radius: 20px;
+
+      @media (min-width: 768px) {
+        left: -34px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__submit {
+    align-self: flex-end;
+  }
+}
+
+.feedback {
+  &__close {
+    background: url("svg/closed.svg");
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      position: absolute;
+      left: -74px;
+      top: 34px;
+    }
+  }
+
+  visibility: hidden;
+  transform: translateX(150%);
+  transition: $trans;
+
+  &--active {
+    visibility: visible;
+    transform: none;
+  }
+}
+
+.callback {
+  &__close {
+    background: url("svg/closed.svg");
+    margin-bottom: 16px;
+
+    @media (min-width: 768px) {
+      position: absolute;
+      left: -74px;
+      top: 34px;
+    }
+  }
+
+  visibility: hidden;
+  transform: translateX(150%);
+  transition: $trans;
+
+  &--active {
+    visibility: visible;
+    transform: none;
+  }
+}
+
+.form {
+  &__text {
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+  &__link {
+    color: $pink;
+  }
+}
